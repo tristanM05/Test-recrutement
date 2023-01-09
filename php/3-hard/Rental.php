@@ -33,3 +33,34 @@ class Rental
 // une méthode getMovie qui renvoie l'objet Movie associé à la location
 // une propriété movie qui enregistre l'objet Movie associé à la location
 // une propriété daysRented qui enregistre le nombre de jours de location.
+
+//piste d'amélioration
+
+// Suite de la fonction getAmountDue de la class movie en injectant $daysRented.
+
+// class Rental
+// {
+//     public function __construct(Movie $movie, int $daysRented)
+//     {
+//         $this->movie = $movie;
+//         $this->daysRented = $daysRented;
+//     }
+
+//     public function getDaysRented(): int
+//     {
+//         return $this->daysRented;
+//     }
+
+//     public function getMovie(): Movie
+//     {
+//         return $this->movie;
+//     }
+
+//     public function getAmountDue(): float
+//     {
+//         return $this->movie->getAmountDue($this->daysRented);
+//     }
+
+//     private Movie $movie;
+//     private int $daysRented;
+// }

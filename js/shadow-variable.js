@@ -24,3 +24,7 @@ document.write(`
 //   avec une boucle for et en ajoutant la propriété kudos de chaque article à la variable $kudos. La fonction retourne le nombre total de kudos.
 
 // - Ensuite on affiche le nombres maximal de kudos que l'on peut donner à un article et le nombre total de kudos déjà donnés à travers tous les articles.
+
+// Piste d'optimisation:
+
+// 1. Utiliser une variable pour stocker le résultat du calcul plutôt que d'appeler la fonction calculateTotalKudos à chaque itération de la boucle.

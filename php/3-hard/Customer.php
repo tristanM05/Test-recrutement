@@ -92,3 +92,57 @@ class Customer
 // méthode addRental et dans la méthode statement pour accéder aux détails de chaque location.
 
 // Enfin, la classe "Movie (Movie.php)" est également utilisée dans la méthode statement pour accéder au code de prix d'un film et pour calculer le montant dû pour chaque location.
+
+
+// Piste d'optimisation
+
+//1. diminution du code dans le controller après avoir déplacer la logique getAmountDue dans les class movie et rental
+
+
+// class Customer
+// {
+//     public function __construct(string $name)
+//     {
+//         $this->name = $name;
+//     }
+
+//     public function addRental(Rental $rental): void
+//     {
+//         $this->rentals[] = $rental;
+//     }
+
+//     public function getName(): string
+//     {
+//         return $this->name;
+//     }
+
+//     public function statement(): string
+//     {
+//         $totalAmount = 0.0;
+//         $frequentRenterPoints = 0;
+//         $result = "Rental Record for " . $this->getName() . "\n";
+
+//         foreach ($this->rentals as $rental) {
+//             $thisAmount = $rental->getAmountDue();
+
+//             $frequentRenterPoints++;
+
+//             if ($rental->getMovie()->getPriceCode() == Movie::NEW_RELEASE
+//                 && $rental->getDaysRented() > 1) {
+//                 $frequentRenterPoints++;
+//             }
+
+//             $result .= "\t" . $rental->getMovie->getTitle() . "\t" . number_format($thisAmount, 1) . "\n";
+//             $totalAmount += $thisAmount;
+//         }
+
+//         $result .= "You owed " . number_format($totalAmount, 1)  . "\n";
+//         $result .= "You earned " . $frequentRenterPoints . " frequent renter points\n";
+
+//         return $result;
+//     }
+
+//     private string $name;
+//     private array $rentals = [];
+// }
+

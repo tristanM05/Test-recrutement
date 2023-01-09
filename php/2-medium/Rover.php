@@ -83,3 +83,60 @@ class Rover
 // contient "f", le rover se déplace dans la direction dans laquelle il fait face. Si $displacement vaut 1, le rover avance. Si $displacement vaut -1, le rover recule.
 
 // En résumé, cette classe définit un rover qui peut recevoir une série de commandes pour se déplacer.
+
+// Pistes d'optimisation: 
+
+// 1.On peut utiliser un tableau associatif pour mapper les directions et les commandes de rotation afin de remplacer le code de rotation répétitif par une seule ligne de code.
+// 2.Au lieu de utiliser une boucle for et substr pour parcourir la chaîne de commandes, on peut utiliser la fonction str_split pour diviser la chaîne en tableau de caractères et utiliser une boucle foreach pour parcourir le tableau.
+// 3.Au lieu de définir une variable $displacement avec une valeur constante de -1 ou 1, on peut utiliser le ternaire $command === 'f' ? 1 : -1 pour définir la valeur de $displacement.
+// 4.Au lieu de utiliser plusieurs if pour vérifier la direction du rover, on peut utiliser un switch.
+
+
+// class Rover
+// {
+//     private $directions = [
+//         'N' => ['l' => 'W', 'r' => 'E'],
+//         'S' => ['l' => 'E', 'r' => 'W'],
+//         'W' => ['l' => 'S', 'r' => 'N'],
+//         'E' => ['l' => 'N', 'r' => 'S'],
+//     ];
+//     private string $direction;
+//     private int $y;
+//     private int $x;
+
+//     public function __construct(int $x, int $y, string $direction)
+//     {
+//         $this->direction = $direction;
+//         $this->y = $y;
+//         $this->x = $x;
+//     }
+
+//     public function receive(string $commandsSequence): void
+//     {
+//         $commands = str_split($commandsSequence);
+//         foreach ($commands as $command) {
+//             if ($command === 'l' || $command === 'r') {
+//                 // Rotate Rover
+//                 $this->direction = $this->directions[$this->direction][$command];
+//             } else {
+//                 // Displace Rover
+//                 $displacement = $command === 'f' ? 1 : -1;
+
+//                 switch ($this->direction) {
+//                     case 'N':
+//                         $this->y += $displacement;
+//                         break;
+//                     case 'S':
+//                         $this->y -= $displacement;
+//                         break;
+//                     case 'W':
+//                         $this->x -= $displacement;
+//                         break;
+//                     case 'E':
+//                         $this->x += $displacement;
+//                         break;
+//                 }
+//             }
+//         }
+//     }
+// }
